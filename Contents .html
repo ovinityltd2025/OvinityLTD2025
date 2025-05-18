@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OVINITY LTD</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body { background: #0a0a0a; color: #e0f7fa; font-family: 'Orbitron', sans-serif; margin: 0; padding: 0; }
+    header { background: rgba(0,0,0,0.7); padding: 20px 40px; display: flex; justify-content: space-between; position: fixed; top: 0; width: 100%; border-bottom: 1px solid #00ffff; z-index: 1000; }
+    .logo { color: #00ffff; font-size: 24px; user-select: none; }
+    nav a { margin-left: 20px; color: #e0f7fa; text-decoration: none; cursor: pointer; }
+    nav a.active { color: #ff00cc; font-weight: bold; }
+    section { padding: 120px 20px 60px; max-width: 900px; margin: auto; display: none; }
+    section.active { display: block; }
+    h1, h2 { color: #00ffff; }
+    h3 { color: #ff00cc; }
+    footer { text-align: center; padding: 20px; border-top: 1px solid #00ffff; margin-top: 40px; }
+    form input, form textarea { background: #111; color: white; border: 1px solid #00ffff; padding: 10px; width: 100%; margin-bottom: 10px; font-family: 'Orbitron', sans-serif; font-size: 1rem; }
+    form button { background: #00ffff; color: #000; padding: 10px; border: none; font-weight: bold; cursor: pointer; font-family: 'Orbitron', sans-serif; font-size: 1rem; }
+    #particles-js { position: fixed; width: 100%; height: 100%; z-index: -1; }
+    .project { margin-bottom: 25px; padding: 20px; background: rgba(255, 255, 255, 0.05); border-left: 4px solid #00ffff; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">OVINITY LTD</div>
+    <nav>
+      <a href="#" data-target="home" class="active">Home</a>
+      <a href="#" data-target="about">About</a>
+      <a href="#" data-target="solutions">Solutions</a>
+      <a href="#" data-target="projects">Projects</a>
+      <a href="#" data-target="blog">Blog</a>
+      <a href="#" data-target="contact">Contact</a>
+    </nav>
+  </header>
+
+  <div id="particles-js"></div>
+
+  <main>
+    <section id="home" class="active" data-aos="fade-in">
+      <h1>Future Begins Here</h1>
+      <p>Engineering the next generation of intelligent systems.</p>
+    </section>
+
+    <section id="about" data-aos="fade-up">
+      <h2>About OVINITY LTD</h2>
+      <p>We are pioneers in the tech frontier, specializing in quantum AI, neural operating systems, immersive XR, and self-defending cybersecurity systems. Our mission is to shape a smarter, more connected future through responsible and visionary innovation.</p>
+    </section>
+
+    <section id="solutions" data-aos="fade-up">
+      <h2>Our Solutions</h2>
+      <div class="project"><h3>QuantumGrid AI</h3><p>Quantum-enhanced neural processing for enterprise optimization.</p></div>
+      <div class="project"><h3>Synapse OS</h3><p>Immersive OS combining XR and neural computing for smart devices.</p></div>
+      <div class="project"><h3>SentinelNet</h3><p>Generative defense AI that predicts and neutralizes cyber threats.</p></div>
+      <div class="project"><h3>OmniLink XR</h3><p>Connects real and digital worlds with holographic XR integration.</p></div>
+    </section>
+
+    <section id="projects" data-aos="fade-up">
+      <h2>Projects</h2>
+      <div class="project"><h3>AI Climate Model</h3><p>Using AI to model and mitigate climate change risks in real-time.</p></div>
+      <div class="project"><h3>NeuroLink Trials</h3><p>Experimenting with safe human-machine interfaces for assisted cognition.</p></div>
+    </section>
+
+    <section id="blog" data-aos="fade-up">
+      <h2>Insights & Blog</h2>
+      <div class="project"><h3>The Future of AI</h3><p>Neural quantum computing and what it means for businesses.</p></div>
+      <div class="project"><h3>Cybersecurity in 2030</h3><p>How autonomous AI is transforming defense protocols.</p></div>
+    </section>
+
+    <section id="contact" data-aos="fade-up">
+      <h2>Contact Us</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>&copy; 2025 OVINITY LTD – All Rights Reserved</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 60 },
+        color: { value: "#00ffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: 3 },
+        line_linked: { enable: true, distance: 150, color: "#00ffff", opacity: 0.4, width: 1 },
+        move: { enable: true, speed: 2 }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: true, mode: "push" }
+        },
+        modes: {
+          repulse: { distance: 100 },
+          push: { particles_nb: 4 }
+        }
+      },
+      retina_detect: true
+    });
+
+    AOS.init({ duration: 1200 });
+
+    const navLinks = document.querySelectorAll('nav a');
+    const sections = document.querySelectorAll('main section');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = link.getAttribute('data-target');
+        sections.forEach(sec => {
+          sec.classList.toggle('active', sec.id === target);
+        });
+        navLinks.forEach(lnk => {
+          lnk.classList.toggle('active', lnk === link);
+        });
+        AOS.refresh();
+      });
+    });
+  </script>
+</body>
+</html>
